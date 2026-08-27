@@ -107,10 +107,18 @@ createApp({
 
     // Dokumentasi Foto Lapangan & Rapat (Pure Image Library)
     const galleryImages = ref([
-      'assets/dokumentasi/dokumentasi-1.jpg',
-      'assets/dokumentasi/dokumentasi-2.jpg',
-      'assets/dokumentasi/dokumentasi-3.jpg',
-      'assets/dokumentasi/dokumentasi-4.jpg'
+      'assets/dokumentasi/dokumentasi-1.jpeg',
+      'assets/dokumentasi/dokumentasi-2.jpeg',
+      'assets/dokumentasi/dokumentasi-3.jpeg',
+      'assets/dokumentasi/dokumentasi-4.jpeg',
+      'assets/dokumentasi/dokumentasi-5.jpeg',
+      'assets/dokumentasi/dokumentasi-6.jpeg',
+      'assets/dokumentasi/dokumentasi-7.jpeg',
+      'assets/dokumentasi/dokumentasi-8.jpeg',
+      'assets/dokumentasi/dokumentasi-9.jpeg',
+      'assets/dokumentasi/dokumentasi-10.jpeg',
+      'assets/dokumentasi/dokumentasi-11.jpeg',
+      'assets/dokumentasi/dokumentasi-12.jpeg'
     ]);
 
     const activePhoto = ref(null);

@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id" :data-theme="currentTheme">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Profesional Architectural Drafter - Spesialis Gambar Kerja AutoCAD, Trimble SketchUp, SketchUp LayOut, dan Microsoft Office.">
+  <title>Mahareza Firdaus — Structural Drafter</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Vue.js 3 Production Build -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="app">
+  <!-- Minimalist Header & Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-content">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-dot"></span>
+        <span class="name">MAHAREZA FIRDAUS</span>
+        <span class="title-sub">DRAFTER</span>
+      </a>
+
+      <ul class="nav-links" :class="{ 'mobile-open': mobileMenuOpen }">
+        <li><a href="#hero" class="nav-link" @click="mobileMenuOpen = false">Profil</a></li>
+        <li><a href="#projects" class="nav-link" @click="mobileMenuOpen = false">Proyek DED</a></li>
+        <li><a href="#activities" class="nav-link" @click="mobileMenuOpen = false">Survei & Kerja</a></li>
+        <li><a href="#experience" class="nav-link" @click="mobileMenuOpen = false">Pengalaman</a></li>
+        <li><a href="#skills" class="nav-link" @click="mobileMenuOpen = false">Software</a></li>
+        <li><a href="#contact" class="nav-link" @click="mobileMenuOpen = false">Kontak</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button @click="toggleTheme" class="btn-theme" :title="currentTheme === 'dark' ? 'Mode Terang' : 'Mode Gelap'">
+          <i :class="currentTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
+        </button>
+        <a href="#contact" class="btn btn-primary btn-sm">Hubungi</a>
+        <button class="mobile-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+          <i :class="mobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-header-badge">
+          <span class="status-indicator"></span>
+          <span>AVAILABLE FOR FULL-TIME / FREELANCE DRAFTER</span>
+        </div>
+        
+        <h1 class="hero-title">
+          DRAFTER
+        </h1>
+        
+        <p class="hero-desc">
+          Menerjemahkan ide konsep arsitektur dan sketsa perencana menjadi <strong>Gambar Kerja DED</strong>,<strong>Shop Drawing</strong>, <strong>Gambar PBG </strong> dan <strong>As-Built Drawing</strong> yang presisi menggunakan <strong>AutoCAD, SketchUp LayOut</strong>, serta <strong>Microsoft Office</strong>.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-layer-group"></i> Lihat Lembar Gambar
+          </a>
+          <button class="btn btn-secondary" @click="openCvModal = true">
+            <i class="fa-solid fa-file-lines"></i> Ringkasan CV
+          </button>
+          <a href="mailto:maharfrds@gmail.com" class="btn btn-outline">
+            <i class="fa-solid fa-envelope"></i> maharfrds@gmail.com
+          </a>
+        </div>
+
+        <!-- Key Metrics Strip -->
+        <div class="stats-row">
+          <div class="stat-box">
+            <span class="stat-num">6+ Thn</span>
+            <span class="stat-label">Pengalaman Kerja</span>
+          </div>
+          <!-- <div class="stat-box">
+            <span class="stat-num">250+</span>
+            <span class="stat-label">Lembar Shop Drawing</span>
+          </div> -->
+          <!-- <div class="stat-box">
+            <span class="stat-num">1:20 / 1:50</span>
+            <span class="stat-label">Detailing Scale Accuracy</span>
+          </div> -->
+          <div class="stat-box">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">Site-Ready Documentation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  
+    <!-- KOLEKSI DOKUMEN GAMBAR KERJA (3 PROYEK: PEMERINTAHAN, RUMAH TINGGAL, SEKOLAH) -->
+    <section class="section-padding" id="projects">
+      <div class="container">
+        <div class="section-head-flex">
+          <div>
+            <span class="section-tag">DOKUMENTASI GAMBAR KERJA</span>
+            <h2 class="section-title">Proyek Sudah di Kerjakan</h2>
+          </div>
+          
+          <!-- Category Tabs -->
+          <div class="filter-pills">
+            <button 
+              v-for="cat in projectCategories" 
+              :key="cat.id"
+              class="pill-btn" 
+              :class="{ active: selectedCategory === cat.id }"
+              @click="selectedCategory = cat.id"
+            >
+              {{ cat.label }}
+            </button>
+          </div>
+        </div>
+
+        <!-- Projects Grid With Authentic Covers -->
+        <div class="projects-clean-grid">
+          <div 
+            v-for="project in filteredProjects" 
+            :key="project.id"
+            class="project-card"
+          >
+            <!-- Card Cover Image Container -->
+            <a :href="project.driveUrl" target="_blank" class="card-cover-wrap" title="Buka di Google Drive">
+              <img :src="project.coverImage" :alt="project.title" class="project-cover-img" loading="lazy">
+            </a>
+            
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="discipline-badge">{{ project.disciplineLabel }}</span>
+                <span class="software-text">{{ project.software }}</span>
+              </div>
+              <h3 class="card-title">{{ project.title }}</h3>
+              <p class="card-desc">{{ project.description }}</p>
+              
+              <div class="card-footer-actions">
+                <a :href="project.driveUrl" target="_blank" class="btn btn-primary btn-block btn-sm btn-drive">
+                  <i class="fa-brands fa-google-drive"></i> Buka Google Drive
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOKUMENTASI FOTO LAPANGAN & RAPAT (IMAGE LIBRARY) -->
+    <section class="section-padding bg-subtle" id="activities">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">DOKUMENTASI</span>
+          <h2 class="section-title">Dokumentasi Lapangan & Rapat</h2>
+        </div>
+
+        <!-- Pure Image Gallery Grid -->
+        <div class="image-library-grid">
+          <div 
+            v-for="(img, idx) in galleryImages" 
+            :key="idx"
+            class="image-library-item"
+            @click="openPhotoModal(img)"
+          >
+            <img :src="img" :alt="'Dokumentasi ' + (idx + 1)" class="library-thumb" loading="lazy">
+            <div class="library-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGALAMAN KERJA (EXPERIENCE) -->
+    <section class="section-padding bg-subtle" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">REKAM JEJAK PROFESIONAL</span>
+          <h2 class="section-title">Pengalaman Kerja</h2>
+        </div>
+
+        <div class="experience-list">
+          <div v-for="(exp, idx) in experiences" :key="idx" class="exp-card">
+            <div class="exp-header">
+              <div class="exp-title-group">
+                <h3 class="exp-role">{{ exp.role }}</h3>
+                <div class="exp-company">{{ exp.company }}</div>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-period">{{ exp.period }}</span>
+                <span class="exp-badge">{{ exp.type }}</span>
+              </div>
+            </div>
+            <p class="exp-desc">{{ exp.description }}</p>
+            <ul class="exp-highlights">
+              <li v-for="(h, hIdx) in exp.highlights" :key="hIdx">
+                <i class="fa-solid fa-check"></i> {{ h }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE & TOOLS (AUTOCAD, SKETCHUP, SKETCHUP LAYOUT, MS OFFICE) -->
+    <section class="section-padding" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">PERANGKAT LUNAK & KEAHLIAN</span>
+          <h2 class="section-title">Software & Keahlian Teknis</h2>
+        </div>
+
+        <div class="skills-clean-grid">
+          <div v-for="skill in softwareSkills" :key="skill.name" class="skill-item">
+            <div class="skill-top">
+              <div class="skill-name-icon">
+                <i :class="skill.icon"></i>
+                <strong>{{ skill.name }}</strong>
+              </div>
+              <span class="pct">{{ skill.percentage }}%</span>
+            </div>
+            <div class="bar-track"><div class="bar-val" :style="{ width: skill.percentage + '%' }"></div></div>
+            <p>{{ skill.summary }}</p>
+          </div>
+        </div>
+
+        <!-- Compact Certifications & Education Banner -->
+        <div class="cert-compact-banner">
+          <div class="cert-item" v-for="(cert, cIdx) in certifications" :key="cIdx">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+              <strong>{{ cert.title }}</strong>
+              <span>{{ cert.issuer }} ({{ cert.year }})</span>
+            </div>
+          </div>
+          <div class="cert-item">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>
+              <strong>SMKN 7 Baleendah (DPIB)</strong>
+              <span>Desain Pemodelan dan Informasi Bangunan (2021)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-padding bg-subtle" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-text-side">
+            <span class="section-tag">KONTAK</span>
+            <h2 class="section-title">Mulai Kerjasama</h2>
+            <p class="contact-desc">Tersedia untuk rekrutmen posisi Full-Time Drafter, Remote Drafter (AutoCAD / SketchUp LayOut), maupun pengerjaan gambar kerja proyek.</p>
+            
+            <div class="contact-info-clean">
+              <div class="c-row">
+                <span class="c-lbl">Email:</span>
+                <a href="mailto:maharfrds@gmail.com" class="c-val">maharfrds@gmail.com</a>
+              </div>
+              <div class="c-row">
+                <span class="c-lbl">Telepon / WA:</span>
+                <a href="https://wa.me/6289526766115" target="_blank" class="c-val">0895-2676-6115 (+62 895-2676-6115)</a>
+              </div>
+              <div class="c-row">
+                <span class="c-lbl">Lokasi:</span>
+                <span class="c-val">Bandung, Jawa Barat (Available On-Site & Remote)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-side">
+            <form @submit.prevent="submitContactForm" class="clean-form">
+              <div class="form-field">
+                <label>Nama / Perusahaan</label>
+                <input type="text" v-model="contactForm.name" placeholder="Nama Anda / Perusahaan" required>
+              </div>
+              <div class="form-field">
+                <label>Email</label>
+                <input type="email" v-model="contactForm.email" placeholder="nama@email.com" required>
+              </div>
+              <div class="form-field">
+                <label>Kebutuhan Pekerjaan</label>
+                <textarea v-model="contactForm.message" rows="3" placeholder="Deskripsikan kebutuhan drafting (Arsitektur / Sipil / MEP / LayOut)..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block" :disabled="formSubmitting">
+                <span v-if="!formSubmitting">Kirim Pesan</span>
+                <span v-else>Mengirim...</span>
+              </button>
+              <div v-if="formSuccessMessage" class="form-alert-success">
+                {{ formSuccessMessage }}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CV MODAL (AUTHENTIC CV DATA) -->
+  <div class="modal-backdrop" :class="{ active: openCvModal }">
+    <div class="modal-window cv-modal" v-if="openCvModal">
+      <div class="modal-header">
+        <h3>Curriculum Vitae — Mahareza Firdaus</h3>
+        <button class="btn-close" @click="openCvModal = false"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="cv-body">
+        <div class="cv-block">
+          <h4>PROFIL SINGKAT</h4>
+          <p>Lulusan <strong>Desain Pemodelan dan Informasi Bangunan (DPIB) SMKN 7 Baleendah (2021)</strong>. Berpengalaman sebagai <strong>Drafter Arsitektural, Sipil, dan MEP</strong> di konsultan bangunan (PT. Konars RWX, PT. Skala Delapan Konsultan, PT. Baladewa Cipta Kreasi, CV. Sasana Karya) dan Inspektur Quality di <strong>PT Astra Daihatsu Motor</strong>. Cepat belajar, adaptif, serta mahir mengoperasikan software <strong>AutoCAD</strong>, <strong>Trimble SketchUp</strong>, <strong>SketchUp LayOut</strong>, dan <strong>Microsoft Office</strong> untuk kebutuhan gambar teknik dan survei lapangan.</p>
+        </div>
+
+        <div class="cv-block">
+          <h4>KONTAK</h4>
+          <p><strong>Email:</strong> maharfrds@gmail.com | <strong>Telepon/WA:</strong> 0895-2676-6115 | <strong>Domisili:</strong> Bandung, Jawa Barat</p>
+        </div>
+
+        <div class="cv-block">
+          <h4>PENGALAMAN KERJA</h4>
+          <div class="cv-job-item" v-for="(exp, idx) in experiences" :key="idx">
+            <strong>{{ exp.role }} ({{ exp.period }})</strong>
+            <span>{{ exp.company }}</span>
+            <p>{{ exp.description }}</p>
+          </div>
+        </div>
+
+        <div class="cv-block">
+          <h4>PENDIDIKAN</h4>
+          <p><strong>{{ education.school }}</strong> ({{ education.period }})<br>Jurusan: {{ education.major }}<br><small>{{ education.grades }}</small></p>
+        </div>
+
+        <div class="cv-block">
+          <h4>SERTIFIKASI & PENGHARGAAN</h4>
+          <ul>
+            <li v-for="(c, cIdx) in certifications" :key="cIdx">
+              <strong>{{ c.title }}</strong> — {{ c.issuer }} ({{ c.year }})
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="cv-footer">
+        <a href="assets/docs/CV-Mahareza-Firdaus.pdf" target="_blank" class="btn btn-secondary btn-sm"><i class="fa-solid fa-download"></i> Unduh File PDF</a>
+        <button class="btn btn-secondary btn-sm" @click="printCv()"><i class="fa-solid fa-print"></i> Cetak</button>
+        <button class="btn btn-primary btn-sm" @click="openCvModal = false">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO ZOOM MODAL (PURE IMAGE VIEW) -->
+  <div class="modal-backdrop" :class="{ active: activePhoto !== null }">
+    <div class="modal-window photo-zoom-window" v-if="activePhoto">
+      <div class="modal-header">
+        <h3>Pratinjau Foto Dokumentasi</h3>
+        <button class="btn-close" @click="closePhotoModal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body-photo">
+        <img :src="activePhoto" alt="Dokumentasi Lapangan" class="modal-photo-full">
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimalist Footer -->
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>© 2026 Mahareza Firdaus. Drafter — Bandung, Jawa Barat.</span>
+      <div class="footer-links">
+        <a href="#hero">Atas</a>
+        <a href="#projects">Proyek</a>
+        <a href="#activities">Dokumentasi</a>
+        <a href="#experience">Pengalaman</a>
+        <a href="#skills">Software</a>
+        <a href="#contact">Kontak</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

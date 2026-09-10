@@ -70,7 +70,7 @@ createApp({
         disciplineLabel: 'RUMAH TINGGAL',
         coverImage: 'assets/covers/cover_rumah_tinggal.png',
         driveUrl: 'https://drive.google.com/drive/folders/1gp2Ziwpsg-sXck85_HDBTJLd1fIKN7oS?usp=drive_link',
-        software: 'AutoCAD 2D',
+        software: 'AutoCAD 2D & SketchUp LayOut',
         layerStandard: 'Detail Engineering Design (DED)',
         deliverables: 'Denah, Tampak Bangunan, Potongan & Detail Gambar Kerja',
         description: 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project rumah tinggal'

@@ -148,12 +148,6 @@ createApp({
         percentage: 88,
         icon: 'fa-solid fa-file-excel',
         summary: 'Penyusunan data rekapitulasi teknis.'
-      },
-      {
-        name: 'Quality Control & Survey Lapangan',
-        percentage: 94,
-        icon: 'fa-solid fa-ruler-combined',
-        summary: 'Pengalaman inspeksi kualitas di PT Astra Daihatsu Motor (5S, defect analysis, dimension check) dan survey pengukuran bangunan di konsultan perencana.'
       }
     ];
 

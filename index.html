@@ -43,7 +43,9 @@
         <button @click="toggleTheme" class="btn-theme" :title="currentTheme === 'dark' ? 'Mode Terang' : 'Mode Gelap'">
           <i :class="currentTheme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun'"></i>
         </button>
-        <a href="#contact" class="btn btn-primary btn-sm">Hubungi</a>
+        <a href="mailto:maharfrds@gmail.com?subject=Tawaran%20Kerjasama%20Drafter%20-%20Mahareza%20Firdaus" class="btn btn-primary btn-sm">
+          <i class="fa-solid fa-envelope"></i> Kontak Saya
+        </a>
         <button class="mobile-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
           <i :class="mobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
         </button>
@@ -83,7 +85,7 @@
         <!-- Key Metrics Strip -->
         <div class="stats-row">
           <div class="stat-box">
-            <span class="stat-num">6+ Thn</span>
+            <span class="stat-num">3+ Thn</span>
             <span class="stat-label">Pengalaman Kerja</span>
           </div>
           <!-- <div class="stat-box">
@@ -280,28 +282,28 @@
             </div>
           </div>
 
-          <div class="contact-form-side">
-            <form @submit.prevent="submitContactForm" class="clean-form">
-              <div class="form-field">
-                <label>Nama / Perusahaan</label>
-                <input type="text" v-model="contactForm.name" placeholder="Nama Anda / Perusahaan" required>
+          <div class="contact-actions-side">
+            <a href="mailto:maharfrds@gmail.com?subject=Tawaran%20Kerjasama%20Drafter%20-%20Mahareza%20Firdaus" class="contact-action-card primary">
+              <div class="action-icon">
+                <i class="fa-solid fa-envelope"></i>
               </div>
-              <div class="form-field">
-                <label>Email</label>
-                <input type="email" v-model="contactForm.email" placeholder="nama@email.com" required>
+              <div class="action-info">
+                <span class="action-label">Email Langsung</span>
+                <span class="action-main">maharfrds@gmail.com</span>
+                <span class="action-sub">Klik untuk langsung membuka aplikasi email Anda &rarr;</span>
               </div>
-              <div class="form-field">
-                <label>Kebutuhan Pekerjaan</label>
-                <textarea v-model="contactForm.message" rows="3" placeholder="Deskripsikan kebutuhan drafting (Arsitektur / Sipil / MEP / LayOut)..." required></textarea>
+            </a>
+
+            <a href="https://wa.me/6289526766115" target="_blank" class="contact-action-card">
+              <div class="action-icon">
+                <i class="fa-brands fa-whatsapp"></i>
               </div>
-              <button type="submit" class="btn btn-primary btn-block" :disabled="formSubmitting">
-                <span v-if="!formSubmitting">Kirim Pesan</span>
-                <span v-else>Mengirim...</span>
-              </button>
-              <div v-if="formSuccessMessage" class="form-alert-success">
-                {{ formSuccessMessage }}
+              <div class="action-info">
+                <span class="action-label">WhatsApp Chat</span>
+                <span class="action-main">0895-2676-6115</span>
+                <span class="action-sub">Respon cepat via WhatsApp chat & konsultasi &rarr;</span>
               </div>
-            </form>
+            </a>
           </div>
         </div>
       </div>

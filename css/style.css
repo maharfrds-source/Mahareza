@@ -1075,43 +1075,74 @@ button, input, textarea, select {
   font-weight: 500;
 }
 
-.clean-form {
+.contact-actions-side {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: center;
+  gap: 14px;
 }
 
-.form-field label {
-  display: block;
-  font-size: 0.76rem;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: var(--text-muted);
-}
-
-.form-field input, .form-field textarea {
-  width: 100%;
-  padding: 8px 10px;
+.contact-action-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
   background: var(--bg-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  color: var(--text-main);
-  font-size: 0.84rem;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.form-field input:focus, .form-field textarea:focus {
-  outline: none;
-  border-color: var(--text-main);
+.contact-action-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
 }
 
-.form-alert-success {
-  font-size: 0.78rem;
-  color: var(--text-main);
-  background: var(--bg-subtle);
-  border: 1px solid var(--border-strong);
-  padding: 8px;
+.contact-action-card.primary {
+  border-color: var(--border-strong);
+  background: var(--bg-card);
+}
+
+.action-icon {
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
-  text-align: center;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  flex-shrink: 0;
+}
+
+.action-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.action-label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-main {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.action-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
 }
 
 /* ==========================================================================

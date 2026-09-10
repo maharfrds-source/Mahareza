@@ -254,20 +254,6 @@ createApp({
       }
     ];
 
-    // Contact Form
-    const contactForm = ref({ name: '', email: '', message: '' });
-    const formSubmitting = ref(false);
-    const formSuccessMessage = ref('');
-
-    const submitContactForm = () => {
-      formSubmitting.value = true;
-      setTimeout(() => {
-        formSubmitting.value = false;
-        formSuccessMessage.value = `Pesan terkirim! Terima kasih ${contactForm.value.name}, saya akan membalas ke email Anda secepatnya.`;
-        contactForm.value = { name: '', email: '', message: '' };
-      }, 600);
-    };
-
     onMounted(() => {
       document.documentElement.setAttribute('data-theme', currentTheme.value);
     });
@@ -292,11 +278,7 @@ createApp({
       softwareSkills,
       experiences,
       education,
-      certifications,
-      contactForm,
-      formSubmitting,
-      formSuccessMessage,
-      submitContactForm
+      certifications
     };
   }
 }).mount('#app');

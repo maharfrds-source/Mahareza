@@ -20,7 +20,7 @@ createApp({
     const saveTheme = (val) => {
       try {
         localStorage.setItem('drafter_theme', val);
-      } catch (e) {}
+      } catch (e) { }
     };
 
     // Theme state
@@ -60,7 +60,7 @@ createApp({
         software: 'AutoCAD 2D',
         layerStandard: 'Detail Engineering Design (DED)',
         deliverables: 'Denah, Tampak Bangunan, Potongan & Detail Gambar Kerja',
-        description : 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project pemerintahan'
+        description: 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project pemerintahan'
       },
       {
         id: 'proj-rumah',
@@ -73,7 +73,7 @@ createApp({
         software: 'AutoCAD 2D',
         layerStandard: 'Detail Engineering Design (DED)',
         deliverables: 'Denah, Tampak Bangunan, Potongan & Detail Gambar Kerja',
-        description : 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project rumah tinggal'
+        description: 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project rumah tinggal'
       },
       {
         id: 'proj-sekolah',
@@ -86,7 +86,7 @@ createApp({
         software: 'AutoCAD 2D',
         layerStandard: 'Detail Engineering Design (DED)',
         deliverables: 'Denah, Tampak Bangunan, Potongan & Detail Gambar Kerja',
-        description : 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project fasilitas pendidikan/sekolah'
+        description: 'Project pembuatan gambar kerja (DED) yang mencakup pembuatan denah siteplan, denah rencana, tampak, potongan dan detail gambar kerja dari project fasilitas pendidikan/sekolah'
       }
     ]);
 
@@ -131,29 +131,29 @@ createApp({
 
     // Skills & Tools
     const softwareSkills = [
-      { 
-        name: 'AutoCAD (2D Drafting)', 
-        percentage: 95, 
+      {
+        name: 'AutoCAD (2D Drafting)',
+        percentage: 95,
         icon: 'fa-solid fa-draw-polygon',
-        summary: 'Mahir membuat gambar kerja arsitektural, sipil/struktur, dan MEP 2D, survey lapangan, manajemen layer CAD, revisi redline, dan plotting cetak terstandar.' 
+        summary: 'Mahir membuat gambar kerja arsitektural, sipil/struktur, dan MEP 2D, survey lapangan, manajemen layer CAD, revisi redline, dan plotting cetak terstandar.'
       },
-      { 
-        name: 'SketchUp LayOut', 
-        percentage: 92, 
+      {
+        name: 'SketchUp LayOut',
+        percentage: 92,
         icon: 'fa-solid fa-file-invoice',
-        summary: 'Penyusunan set gambar kerja 2D terukur berskala dari model 3D SketchUp, dimensi presisi, notasi detail, dan template titleblock proyek.' 
+        summary: 'Penyusunan set gambar kerja 2D terukur berskala dari model 3D SketchUp, dimensi presisi, notasi detail, dan template titleblock proyek.'
       },
-      { 
-        name: 'Microsoft Office (Excel & Word)', 
-        percentage: 88, 
+      {
+        name: 'Microsoft Office (Excel & Word)',
+        percentage: 88,
         icon: 'fa-solid fa-file-excel',
-        summary: 'Penyusunan data rekapitulasi teknis, perhitungan volume material BOQ di Excel, serta pembuatan dokumen spesifikasi teknis di Word.' 
+        summary: 'Penyusunan data rekapitulasi teknis.'
       },
-      { 
-        name: 'Quality Control & Survey Lapangan', 
-        percentage: 94, 
+      {
+        name: 'Quality Control & Survey Lapangan',
+        percentage: 94,
         icon: 'fa-solid fa-ruler-combined',
-        summary: 'Pengalaman inspeksi kualitas di PT Astra Daihatsu Motor (5S, defect analysis, dimension check) dan survey pengukuran bangunan di konsultan perencana.' 
+        summary: 'Pengalaman inspeksi kualitas di PT Astra Daihatsu Motor (5S, defect analysis, dimension check) dan survey pengukuran bangunan di konsultan perencana.'
       }
     ];
 

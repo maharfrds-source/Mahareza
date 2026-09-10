@@ -1,5 +1,5 @@
 /**
- * MAHAREZA FIRDAUS — ARCHITECTURAL & STRUCTURAL DRAFTER PORTFOLIO
+ * MAHAREZA FIRDAUS — DRAFTER PORTFOLIO
  * Clean, Compact & Minimalist Vue.js 3 Application
  * Bandung, Jawa Barat | maharfrds@gmail.com | 0895-2676-6115
  */

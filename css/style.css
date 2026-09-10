@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MAHAREZA FIRDAUS - ARCHITECTURAL & STRUCTURAL DRAFTER
+   MAHAREZA FIRDAUS - DRAFTER
    Ultra-Clean, Minimalist & Compact Monochrome Design System
    AutoCAD, Trimble SketchUp, SketchUp LayOut, Microsoft Office
    ========================================================================== */
@@ -10,10 +10,10 @@
   --bg-subtle: #111315;
   --bg-card: #17191c;
   --bg-card-hover: #1e2125;
-  
+
   --border-color: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.18);
-  
+
   --text-main: #ffffff;
   --text-muted: #9ca3af;
   --text-dim: #6b7280;
@@ -60,7 +60,9 @@
    Reset & Base
    ========================================================================== */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -92,7 +94,10 @@ a {
   transition: var(--transition);
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font-family: inherit;
 }
 
@@ -465,7 +470,8 @@ button, input, textarea, select {
   transition: var(--transition);
 }
 
-.pill-btn:hover, .pill-btn.active {
+.pill-btn:hover,
+.pill-btn.active {
   background: var(--text-main);
   border-color: var(--text-main);
   color: var(--bg-main);
@@ -1414,7 +1420,12 @@ button, input, textarea, select {
     font-size: 2rem;
   }
 
-  .stats-row, .framework-simple-grid, .projects-clean-grid, .skills-clean-grid, .cert-compact-banner, .contact-box {
+  .stats-row,
+  .framework-simple-grid,
+  .projects-clean-grid,
+  .skills-clean-grid,
+  .cert-compact-banner,
+  .contact-box {
     grid-template-columns: 1fr;
   }
 

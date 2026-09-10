@@ -133,21 +133,23 @@ createApp({
     const softwareSkills = [
       {
         name: 'AutoCAD (2D Drafting)',
-        percentage: 95,
         icon: 'fa-solid fa-draw-polygon',
-        summary: 'Mahir membuat gambar kerja arsitektural, sipil/struktur, dan MEP 2D, survey lapangan, manajemen layer CAD, revisi redline, dan plotting cetak terstandar.'
+        summary: 'Mahir membuat gambar kerja arsitektural, sipil/struktur, dan MEP 2D, survey lapangan dan revisi deadline.'
       },
       {
         name: 'SketchUp LayOut',
-        percentage: 92,
         icon: 'fa-solid fa-file-invoice',
         summary: 'Penyusunan set gambar kerja 2D terukur berskala dari model 3D SketchUp, dimensi presisi, notasi detail, dan template titleblock proyek.'
       },
       {
         name: 'Microsoft Office (Excel & Word)',
-        percentage: 88,
         icon: 'fa-solid fa-file-excel',
         summary: 'Penyusunan data rekapitulasi teknis.'
+      },
+      {
+        name: 'Quality Control & Survey Lapangan',
+        icon: 'fa-solid fa-ruler-combined',
+        summary: 'Pengalaman inspeksi kualitas di PT Astra Daihatsu Motor (5S, defect analysis, dimension check) dan survey pengukuran bangunan di konsultan perencana.'
       }
     ];
 

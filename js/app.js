@@ -65,7 +65,7 @@ createApp({
       {
         id: 'proj-rumah',
         sheetCode: 'DOK-RT-02',
-        title: 'Rumah Tinggal',
+        title: 'Rumah Tinggal dan Interior',
         category: 'rumah',
         disciplineLabel: 'RUMAH TINGGAL',
         coverImage: 'assets/covers/cover_ded_rumah.png',
